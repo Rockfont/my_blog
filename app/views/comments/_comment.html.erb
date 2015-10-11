@@ -1,0 +1,12 @@
+<strong>Автор:</strong>
+<%= comment.commenter %>
+<br>
+  <strong>Комментарий:</strong>
+  <%= comment.body %>
+</br>
+
+<p>
+  <%= link_to 'Удалить комментарий', [comment.article, comment],
+               method: :delete,
+               data: { confirm: 'Вы уверены?' } %>
+</p>
