@@ -1,0 +1,45 @@
+<style>
+  table{
+    margin: 50px 0;
+    text-align: left;
+    border-collapse: separate;
+    border: 1px solid #ddd;
+    border-spacing: 10px;
+    border-radius: 3px;
+    background: #fdfdfd;
+    font-size: 14px;
+    width: auto;
+  }
+  td,th{
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 3px;
+  }
+  th{
+    background: #E4E4E4;
+  }
+  caption{
+    font-style: italic;
+    text-align: right;
+    color: #547901;
+  }
+</style>
+<%= link_to 'Вернуться', articles_path %>
+<h3><%= link_to '☞ Новая статья', new_article_path %></h3>
+<h1>Список статей</h1>
+<h4>Всего: <%= Article.count %> статей</h4>
+<h4>Всего: <%= Comment.count %> комментариев</h4>
+<table>
+    <tr>
+        <th>Название</th>
+        <th>URL</th>
+        <th></th>
+    </tr>
+    <% @articles.each do |article| %>
+    <tr>
+        <td><%= article.title %></td>
+        <td><%= article.name %></td>
+        <td><%= link_to 'Изменить', edit_article_path(article) %></td>
+    </tr>
+    <% end %>
+</table>
